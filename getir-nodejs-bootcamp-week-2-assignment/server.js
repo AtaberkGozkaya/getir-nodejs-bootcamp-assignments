@@ -1,13 +1,16 @@
+//import modules
 const http = require('http');
 const writeLogData = require('./LogData');
 
+//properties
 const port = 8000;
 const hostName = '127.0.0.1';
 
 const logFile = './logs.txt';
 
+//creating server
 const server = http.createServer(async (request, response) => {
-    const pathName = request.url;
+    const pathName = request.url;//get url path names
     if(pathName === '/' || pathName === '/overview')
     {
         response.statusCode = 200;
